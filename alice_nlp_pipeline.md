@@ -1,24 +1,5 @@
-In this lab, you are going to practice using lists, strings, dictionaries, (nested) loops and -- if you want an extra challenge -- recursion. 
-For most of the exercises, you are also going to use an external module, `nlp.py`.
-
-This module provides four basic Natural Language Processing functions that allow you to:
-
-1. guess the language of a text;
-2. segment it into sentences;
-3. lemmatize it (i.e. getting the dictionary form of all words it is composed of) and last but not least
-4. assign grammatical categories (aka part-of-speech tags) to each of its words.
-
-You can learn more about what these functions' input and output types by checking out their docstrings.
-
-To use `nlp.py`, you will need to install two external libraries, `langid` and `spacy_udpipe`.
-On most Python installations, both should be easy to get via `pip`.
-
-The point with `nlp.py` is to allow you to focus on the topics of today's lab.  
-If you feel extra confident, you can ignore it and try to use these third-party libraries directly.
-However, `spacy_udpipe` is object-oriented and its documentation may be difficult to navigate at first.
-
 # Alice through the NLP pipeline
-In the previous exercise, you have done frequency analysis of Alice in Wonderland, finding the top 10 (or top $n$) most common words in the text. 
+In [Alice in Pythonland](alice_pythonland.md), you have done frequency analysis of Alice in Wonderland, finding the top 10 (or top $n$) most common words in the text. 
 However, it would make sense if forms like "cat" and "cats" (the singular and plural of the same noun), "tall" and "taller" (the positive and comparative of the same adjectives), "she" and "her" (the nominative and accusative of the same pronoun) etc. were each counted as instances of the same word.
 You can solve the problem by replacing each word in the text with its dictionary form, or _lemma_.
 Use the functions `sentences()` and `lemmas()` from `nlp.py` to modify your code for the previous exercise so that it performs the same frequency analysis, but using lemmas rather than word forms.

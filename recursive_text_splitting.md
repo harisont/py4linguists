@@ -1,6 +1,6 @@
 # Recursive text splitting
-Large Language Models, which you will surely use at some point during the next two years can only handle a certain amount of tokens (~words) at a time.
-A common solution to this problem is to split the text in two when that limit is reached, and process the rest separately.
+Large Language Models can only handle a certain amount of _tokens_ (~words) at a time.
+A common solution to this problem is to split the text as soon as that limit is reached and process the rest separately.
 However, this can lead to a situation where the text is split in a way that isn't optimal for the task at hand. 
 
 For example, if our model can only process 6 words at a time, the simplest way to split the text

@@ -11,7 +11,7 @@ Write a function that converts times in `HH:MM` (24h) format into text in a lang
 "Sono le otto e mezza"
 ```
 
-Based on your level of experience, you can make this exercise simple or harder. 
+Based on your level of experience, you can make this exercise as easy or as complex as you want. 
 For example, you can use a simpler textual format, such as
 
 ```python
@@ -39,13 +39,5 @@ to
 
 is a valid answer.
 
-In `hints.py`, you can find a function that converts correctly formatted `HH:MM` strings into pairs of numbers. It works as follows:
-
-```python
->>> import hints
->>> hints.to_numbers("08:44")
-(8, 44)
-```
-
 ## Extra challenge
-Instead of using user input, use the [datetime module](https://docs.python.org/3/library/datetime.html) to make the program tell the current time (this should be easy for everyone to do after lecture 5).
+Use the [datetime module](https://docs.python.org/3/library/datetime.html) to make the program tell the current time (this should be easy for everyone to do after lecture 5).
