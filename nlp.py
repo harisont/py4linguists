@@ -1,5 +1,5 @@
 import langid
-import spacy_udpipe as udpipe
+import stanza
 
 def language(txt):
     """Guess the language of the given text, returning the two-letter ISO
@@ -23,10 +23,9 @@ def lemmas(sent,lang="en"):
     sent -- the sentence as a string of text
     lang -- the two-letter ISO code of the language the text is written in
             (default: en)"""
-    udpipe.download(lang)
-    parse = udpipe.load(lang)
-    tokens = parse(sent)
-    return [(token.text, token.lemma_) for token in tokens]
+    parse = stanza.Pipeline(lang=lang, processors='tokenize,lemma')
+    tokens = parse(sent).sentences[0].words
+    return [(token.text, token.lemma) for token in tokens]
 
 def pos_tags(sent,lang="en"):
     """Given a sentence, return a list of (word,part-of-speech tag) pairs
@@ -34,7 +33,6 @@ def pos_tags(sent,lang="en"):
     sent -- the sentence as a string of text
     lang -- the two-letter ISO code of the language the text is written in
             (default: en)"""
-    udpipe.download(lang)
-    parse = udpipe.load(lang)
-    tokens = parse(sent)
-    return [(token.text, token.pos_) for token in tokens]
+    parse = stanza.Pipeline(lang=lang, processors='tokenize,pos')
+    tokens = parse(sent).sentences[0].words
+    return [(token.text, token.upos) for token in tokens]
